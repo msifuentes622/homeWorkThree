@@ -190,6 +190,7 @@ public class CSArrayList<E>
     /**
      * The toString function
      * This uses the ArrayList to get write the string of the array.
+     * using util method
      */
     @Override
     public String toString() {
@@ -198,6 +199,7 @@ public class CSArrayList<E>
 
     /**
      * the clear implement
+     * changes all the object or varbs in the array to null and makes the size to 0
      *
      */
     public void clear() {
@@ -211,6 +213,7 @@ public class CSArrayList<E>
 
     /**
      * the isEmpty implement
+     * create the size of the array empty
      */
     public boolean isEmpty() {
         return size == 0;
@@ -218,6 +221,7 @@ public class CSArrayList<E>
 
     /**
      * remove object o
+     * by reusing indexOf in the remove but removing the object once found
      *
      */
     public boolean remove (Object o) {
@@ -236,6 +240,9 @@ public class CSArrayList<E>
 
     /**
      * ensureCapacity
+     * by changing size to minCap
+     * then creating new array with new size
+     * after trimTo the new size
      */
     public void ensureCapacity(int minCapacity) {
        size = minCapacity;
@@ -246,7 +253,9 @@ public class CSArrayList<E>
     }
 
     /**
-     * trim to size
+     * trim to size]
+     * creates a copy of the array with new size and data
+     * add the new trim array into the data
      */
     public void trimToSize() {
         E[] TrimArray =  Arrays.copyOf(theData, size);
