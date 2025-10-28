@@ -238,9 +238,10 @@ public class CSArrayList<E>
      * ensureCapacity
      */
     public void ensureCapacity(int minCapacity) {
-        if (size < minCapacity) {
-            reallocate();
-        }
+       size = minCapacity;
+        theData = (E[]) new Object[minCapacity];
+        trimToSize();
+
 
     }
 
@@ -248,10 +249,10 @@ public class CSArrayList<E>
      * trim to size
      */
     public void trimToSize() {
-        if (size > capacity) {
-            reallocate();
+        E[] TrimArray =  Arrays.copyOf(theData, size);
+            theData = TrimArray;
         }
-    }
+
 }
 
 
