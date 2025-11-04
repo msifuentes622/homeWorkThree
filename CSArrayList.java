@@ -208,6 +208,7 @@ public class CSArrayList<E>
 
         }
         size = 0;
+        modCount++;
 
     }
 
